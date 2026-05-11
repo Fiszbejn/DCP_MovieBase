@@ -40,10 +40,10 @@ class _MovieBaseScreenState extends State<MovieBaseScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: MovieBaseAppbar(),
-        body: Padding(
+    return Scaffold(
+      appBar: MovieBaseAppbar(),
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsetsGeometry.fromLTRB(16, 0, 16, 0),
           child: Column(
             children: [
@@ -143,6 +143,7 @@ class _MovieBaseScreenState extends State<MovieBaseScreen> {
                   child: GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
+                          childAspectRatio: 0.80,
                           crossAxisCount: 2,
                           crossAxisSpacing: 4,
                           mainAxisSpacing: 4,

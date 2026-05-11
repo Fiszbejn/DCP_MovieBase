@@ -23,19 +23,36 @@ class MovieCard extends StatelessWidget {
                     child: Image.asset(movie.banner, fit: BoxFit.contain),
                   ),
                 ),
+
                 Text(
                   movie.name,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-                Text(movie.director),
-                Text(movie.launchDate),
-                Text(movie.studio.name),
+
+                Text(
+                  movie.director,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+
+                Text(
+                  movie.launchDate,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+
+                Text(
+                  movie.studio.name,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ],
             )
           : Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               child: Row(
+                mainAxisSize: MainAxisSize.max,
                 spacing: 8,
                 children: [
                   ClipRRect(
@@ -46,22 +63,25 @@ class MovieCard extends StatelessWidget {
                       child: Image.asset(movie.banner, fit: BoxFit.contain),
                     ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 4,
-                    children: [
-                      Text(
-                        movie.name,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 4,
+                      children: [
+                        Text(
+                          movie.name,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                      Text(movie.director),
-                      Text(movie.launchDate),
-                      Text(movie.studio.name),
-                    ],
+                        Text(movie.director),
+                        Text(movie.launchDate),
+                        Text(movie.studio.name),
+                      ],
+                    ),
                   ),
                 ],
               ),
