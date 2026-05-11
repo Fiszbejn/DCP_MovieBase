@@ -190,3 +190,9 @@ List<Movie> getMoviesByName(String name) {
       .where((movie) => movie.name.toLowerCase().contains(name))
       .toList();
 }
+
+List<Movie> getMoviesByStudioAndName(Studio studio, String name) {
+  return getMoviesByStudio(
+    studio,
+  ).where((movie) => movie.name.toLowerCase().contains(name)).toList();
+}

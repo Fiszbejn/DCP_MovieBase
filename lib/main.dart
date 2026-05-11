@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:moviebase/ui/screens/movie_base_screen.dart';
 
@@ -10,6 +12,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MovieBaseScreen();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      scrollBehavior: MouseScrollBehavior(),
+      home: MovieBaseScreen(),
+    );
   }
+}
+
+class MouseScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+    PointerDeviceKind.trackpad,
+  };
 }

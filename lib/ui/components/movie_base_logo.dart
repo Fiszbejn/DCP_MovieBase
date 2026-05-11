@@ -12,9 +12,23 @@ class MovieBaseLogo extends StatelessWidget {
         children: [
           Icon(Icons.live_tv_rounded),
           SizedBox(width: 8),
-          Text(
-            "MovieBase",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: "Movie",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                ),
+                TextSpan(
+                  text: "Base",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    color: Color.fromARGB(255, 112, 0, 0),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
